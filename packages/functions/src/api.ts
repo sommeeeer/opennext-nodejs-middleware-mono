@@ -1,6 +1,6 @@
-import { Resource } from "sst";
-import { Handler } from "aws-lambda";
-import { Example } from "@monorepo-template/core/example";
+import { Resource } from 'sst';
+import { Handler } from 'aws-lambda';
+import { Example } from '../../core/src/example';
 
 export const handler: Handler = async (_event) => {
   return {
