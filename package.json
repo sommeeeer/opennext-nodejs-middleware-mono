@@ -11,5 +11,10 @@
   },
   "dependencies": {
     "sst": "^3"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "next": "patches/next.patch"
+    }
   }
 }

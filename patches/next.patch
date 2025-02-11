@@ -1,0 +1,26 @@
+diff --git a/dist/build/index.js b/dist/build/index.js
+index c5d49245c89b872009af9bcab5aa8cde1746db7b..4b27d20908e0854c9b9954e1ca392f0dbf78b181 100644
+--- a/dist/build/index.js
++++ b/dist/build/index.js
+@@ -270,7 +270,7 @@ async function writeStandaloneDirectory(nextBuildSpan, distDir, pageKeys, denorm
+             await _fs.promises.copyFile(filePath, outputPath);
+         }
+         if (hasNodeMiddleware) {
+-            const middlewareOutput = _path.default.join(distDir, STANDALONE_DIRECTORY, requiredServerFiles.config.distDir, _constants1.SERVER_DIRECTORY, 'middleware.js');
++            const middlewareOutput = _path.default.join(distDir, STANDALONE_DIRECTORY, _path.default.relative(outputFileTracingRoot, requiredServerFiles.appDir), requiredServerFiles.config.distDir, _constants1.SERVER_DIRECTORY, 'middleware.js');
+             await _fs.promises.mkdir(_path.default.dirname(middlewareOutput), {
+                 recursive: true
+             });
+diff --git a/dist/esm/build/index.js b/dist/esm/build/index.js
+index b7ffbd022f5d42810d4b7bea2c50b53b15e6d9d7..ae816e0bd1ee3c0f93c671335475dc77db8dd598 100644
+--- a/dist/esm/build/index.js
++++ b/dist/esm/build/index.js
+@@ -202,7 +202,7 @@ async function writeStandaloneDirectory(nextBuildSpan, distDir, pageKeys, denorm
+             await fs.copyFile(filePath, outputPath);
+         }
+         if (hasNodeMiddleware) {
+-            const middlewareOutput = path.join(distDir, STANDALONE_DIRECTORY, requiredServerFiles.config.distDir, SERVER_DIRECTORY, 'middleware.js');
++            const middlewareOutput = path.join(distDir, STANDALONE_DIRECTORY, path.relative(outputFileTracingRoot, requiredServerFiles.appDir), requiredServerFiles.config.distDir, SERVER_DIRECTORY, 'middleware.js');
+             await fs.mkdir(path.dirname(middlewareOutput), {
+                 recursive: true
+             });
